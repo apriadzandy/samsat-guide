@@ -2,60 +2,66 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Design system untuk aplikasi SAMSAT - colors must be HSL */
+/* Professional Design System untuk aplikasi SAMSAT - colors must be HSL */
 
 @layer base {
   :root {
-    --background: 210 20% 98%;
-    --foreground: 213 31% 17%;
+    --background: 210 15% 97%;
+    --foreground: 213 31% 15%;
 
-    /* Primary colors - Government Blue */
-    --primary: 213 94% 36%;
+    /* Enhanced Primary colors - Professional Government Blue */
+    --primary: 214 88% 45%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 213 94% 46%;
+    --primary-glow: 214 88% 55%;
+    --primary-deep: 214 88% 35%;
     
-    /* Secondary colors - Professional Gray */
-    --secondary: 213 16% 93%;
-    --secondary-foreground: 213 31% 27%;
+    /* Refined Secondary colors - Elegant Gray */
+    --secondary: 213 12% 95%;
+    --secondary-foreground: 213 31% 25%;
 
-    /* Success colors - Green */
-    --success: 142 72% 38%;
+    /* Success colors - Professional Green */
+    --success: 142 69% 42%;
     --success-foreground: 0 0% 100%;
     
-    /* Warning colors - Orange */
-    --warning: 31 100% 62%;
+    /* Warning colors - Refined Orange */
+    --warning: 25 95% 53%;
     --warning-foreground: 0 0% 100%;
 
-    /* Card styles */
+    /* Enhanced Card styles */
     --card: 0 0% 100%;
-    --card-foreground: 213 31% 17%;
+    --card-foreground: 213 31% 15%;
 
-    /* Other design tokens */
-    --muted: 213 16% 93%;
-    --muted-foreground: 213 20% 55%;
+    /* Refined tokens */
+    --muted: 213 12% 95%;
+    --muted-foreground: 213 16% 50%;
     
-    --accent: 213 94% 46%;
+    --accent: 214 88% 55%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 213 27% 84%;
-    --input: 213 27% 84%;
-    --ring: 213 94% 36%;
+    --border: 213 20% 88%;
+    --input: 213 20% 88%;
+    --ring: 214 88% 45%;
 
-    --radius: 0.75rem;
+    --radius: 0.875rem;
 
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(213, 94%, 36%), hsl(213, 94%, 46%));
-    --gradient-secondary: linear-gradient(135deg, hsl(213, 16%, 93%), hsl(213, 16%, 98%));
+    /* Professional Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(214, 88%, 35%) 0%, hsl(214, 88%, 45%) 50%, hsl(214, 88%, 55%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(214, 88%, 45%) 0%, hsl(214, 88%, 55%) 50%, hsl(214, 85%, 65%) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(213, 12%, 95%), hsl(213, 12%, 98%));
+    --gradient-card: linear-gradient(145deg, hsl(0, 0%, 100%) 0%, hsl(210, 20%, 98%) 100%);
     
-    /* Shadows */
-    --shadow-primary: 0 10px 25px -5px hsl(213 94% 36% / 0.1);
-    --shadow-card: 0 4px 6px -1px hsl(213 31% 17% / 0.1);
+    /* Enhanced Professional Shadows */
+    --shadow-primary: 0 20px 40px -12px hsl(214 88% 45% / 0.25);
+    --shadow-card: 0 8px 32px -8px hsl(213 31% 15% / 0.08);
+    --shadow-floating: 0 16px 48px -12px hsl(213 31% 15% / 0.12);
+    --shadow-glow: 0 0 40px hsl(214 88% 55% / 0.2);
     
-    /* Transitions */
+    /* Refined Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
 
   .dark {
@@ -106,8 +112,16 @@
     background: var(--gradient-primary);
   }
   
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
   .gradient-secondary {
     background: var(--gradient-secondary);
+  }
+  
+  .gradient-card {
+    background: var(--gradient-card);
   }
   
   .shadow-primary {
@@ -118,7 +132,34 @@
     box-shadow: var(--shadow-card);
   }
   
+  .shadow-floating {
+    box-shadow: var(--shadow-floating);
+  }
+  
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
   .transition-smooth {
     transition: var(--transition-smooth);
+  }
+  
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+
+  /* Professional hover effects */
+  .hover-lift {
+    @apply transition-smooth hover:shadow-floating hover:-translate-y-1;
+  }
+  
+  .hover-glow {
+    @apply transition-smooth hover:shadow-glow;
+  }
+  
+  .glass-effect {
+    backdrop-filter: blur(12px);
+    background: hsla(0, 0%, 100%, 0.8);
+    border: 1px solid hsla(213, 20%, 88%, 0.3);
   }
 }
